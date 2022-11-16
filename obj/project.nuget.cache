@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "JYJuYWw45N2Wl9GWEX+5AFns4jbwvm/J0e4Bl1RFZCrB3zv/uPUBAGa+YdWGnNPTrXEJWuvsbdNN2phRkOFAzw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Fabio Vincenzi\\source\\repos\\ILGPUwebCompiler\\ILGPUwebCompiler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\ilgpu\\1.3.0-beta3-preview-20221111032119-511d6e7\\ilgpu.1.3.0-beta3-preview-20221111032119-511d6e7.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\microsoft.codeanalysis.common\\4.3.1\\microsoft.codeanalysis.common.4.3.1.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.3.1\\microsoft.codeanalysis.csharp.4.3.1.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\microsoft.net.webassembly.threading\\7.0.0-rc.2.22472.3\\microsoft.net.webassembly.threading.7.0.0-rc.2.22472.3.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
+    "C:\\Users\\Fabio Vincenzi\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
+  "logs": []
+}
