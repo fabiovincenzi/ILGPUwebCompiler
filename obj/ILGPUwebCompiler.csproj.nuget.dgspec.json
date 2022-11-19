@@ -22,6 +22,7 @@
           "net7.0"
         ],
         "sources": {
+          "C:\\Users\\Fabio Vincenzi\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://f.feedz.io/ilgpu/preview/nuget/index.json": {}
         },
@@ -41,10 +42,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "ILGPU": {
-              "target": "Package",
-              "version": "[1.3.0-beta3-preview-20221111032119-511d6e7, )"
-            },
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
               "version": "[4.3.1, )"

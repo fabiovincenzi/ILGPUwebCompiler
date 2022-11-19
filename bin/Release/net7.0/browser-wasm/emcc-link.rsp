@@ -1,0 +1,16 @@
+-Wno-pthreads-mem-growth
+-s PTHREAD_POOL_SIZE=0
+-s PTHREAD_POOL_SIZE_STRICT=2
+-s ALLOW_MEMORY_GROWTH=1
+-s NO_EXIT_RUNTIME=1
+-s FORCE_FILESYSTEM=1
+-s EXPORTED_RUNTIME_METHODS="['FS','print','ccall','cwrap','setValue','getValue','UTF8ToString','UTF8ArrayToString','FS_createPath','FS_createDataFile','removeRunDependency','addRunDependency', 'FS_readFile']"
+-s EXPORTED_FUNCTIONS=_malloc,stackSave,stackRestore,stackAlloc,_memalign,_memset,_htons,_ntohs,_free
+--source-map-base http://example.com
+-s STRICT_JS=1
+-s EXPORT_NAME="'createDotnetRuntime'"
+-s MODULARIZE=1
+-Wl,--allow-undefined
+-s ENVIRONMENT="web,webview,worker,node,shell"
+-Wno-limited-postlink-optimizations
+--profiling-funcs
