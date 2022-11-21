@@ -16,7 +16,7 @@ public partial class Program
     [JSExport]
     internal static async Task<string> Compile(string source)
     {
-        var output = await c.CompileAndRun(source);
+        var output = await c.CompileAndRun(CodeBuilder.getCode(source));
         return output;
     }
 }
