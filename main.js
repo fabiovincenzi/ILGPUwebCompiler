@@ -43,7 +43,6 @@ req.onload = function () {
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
                     console.log("assembly laoded");
                     loader.classList.add("loader-hidden");
-                    document.querySelector('#compile').disabled = false;
                 }
             };
             http.open("GET", "./managed/".concat(jsonResponse.assets[i].name));
