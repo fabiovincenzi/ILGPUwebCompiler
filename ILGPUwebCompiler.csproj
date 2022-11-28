@@ -27,6 +27,7 @@
   <ItemGroup>
     <WasmExtraFilesToDeploy Include="index.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
+	<WasmExtraFilesToDeploy Include="gui.js" />
 	<WasmExtraFilesToDeploy Include="style.css" />
 	<WasmExtraFilesToDeploy Include="codemirror/clike.js" />
 	<WasmExtraFilesToDeploy Include="codemirror/codemirror.js" />

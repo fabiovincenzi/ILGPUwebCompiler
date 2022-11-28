@@ -1,4 +1,6 @@
-import { dotnet } from './dotnet.js'
+import { dotnet } from './dotnet.js';
+import { Gui } from './gui.js';
+
 const is_browser = typeof window != "undefined";
 if (!is_browser) throw new Error(`Expected to be running in a browser`);
 
@@ -7,37 +9,14 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .withApplicationArgumentsFromQuery()
     .create();
 
-var editor = CodeMirror.fromTextArea(document.getElementById("source"), {
-    lineNumbers: true,
-    matchBrackets: true,
-    mode: "text/x-csharp"
-});
+const gui = new Gui();
 
-var output = CodeMirror.fromTextArea(document.getElementById("output"), {
-    lineNumbers: true,
-    matchBrackets: true,
-    readOnly: true,
-    mode: "text/x-csharp"
-});
-var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
-CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
-
-var select = document.getElementById("optimizationLevel");
-function addElementToSelect(item, value) {
-    var option = document.createElement("OPTION"),
-
-        txt = document.createTextNode(item);
-    option.appendChild(txt);
-    option.setAttribute("value", value);
-    select.insertBefore(option, select.lastChild);
-}
-
-const loader = document.querySelector(".loader");
-var arraybuffer;
-var totalFiles = 0;
-
+gui.configureEditor();
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
-var req = new XMLHttpRequest();
+const loader = document.querySelector(".loader");
+let totalFiles = 0;
+let arraybuffer;
+const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', "mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
 req.onload = function () {
@@ -52,7 +31,6 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                    console.log("assembly laoded");
                     loader.classList.add("loader-hidden");
                 }
             };
@@ -61,7 +39,6 @@ req.onload = function () {
             http.send();
             totalFiles++;
         }
-
     }
 };
 req.send(null);
@@ -72,13 +49,12 @@ var source = `private static void TestKernel(Index1D index, ArrayView<int> input
 }
 
                 `;
-editor.getDoc().setValue(source);
+gui.editor.getDoc().setValue(source);
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
 async function compile() {
-    source = editor.getValue();
-    
+    source = gui.editor.getValue();
     var debug = document.getElementById("flexCheckDebug").checked;
     var assertions = document.getElementById("flexCheckAssertions").checked;
     var optimizationLvl = document.getElementById("optimizationLevel");
@@ -91,12 +67,12 @@ setModuleImports("main.js", {
     references: (i) => {
         return arraybuffer[i];
     },
-    totalFiles: () => totalFiles,
+    totalFiles: () => arraybuffer.length,
     fillOptimizationLevelDropDown: (ol, value) => {
-        addElementToSelect(ol, value);
+        gui.addElementToSelect(ol, value);
     },
     setOutput: (out) => {
-        output.getDoc().setValue(out);
+        gui.output.getDoc().setValue(out);
     }
 });
 runMainAndExit(config.mainAssemblyName, []);
