@@ -38,9 +38,8 @@ public partial class Program
     }
     private static void FillOptimizationLevelDropDown()
     {
-        foreach(ILGPU.OptimizationLevel ol in Enum.GetValues(typeof(ILGPU.OptimizationLevel)))
-        {
-            Service.FillOptimizationLevelDropDown(ol.ToString(), (int)ol);
-        }
+        Service.FillOptimizationLevelDropDown(ILGPU.OptimizationLevel.Debug.ToString(), (int)ILGPU.OptimizationLevel.Debug);
+        Service.FillOptimizationLevelDropDown(ILGPU.OptimizationLevel.Release.ToString(), (int)ILGPU.OptimizationLevel.Release);
+        Service.FillOptimizationLevelDropDown(ILGPU.OptimizationLevel.O2.ToString(), (int)ILGPU.OptimizationLevel.O2);
     }
 }
