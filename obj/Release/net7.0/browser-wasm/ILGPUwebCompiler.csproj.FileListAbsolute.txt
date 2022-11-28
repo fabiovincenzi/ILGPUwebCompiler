@@ -255,3 +255,4 @@ C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.pdb
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.genruntimeconfig.cache
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ref\ILGPUwebCompiler.dll
+C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\style.css

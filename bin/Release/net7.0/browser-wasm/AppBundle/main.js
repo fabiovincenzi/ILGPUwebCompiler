@@ -1,5 +1,4 @@
 import { dotnet } from './dotnet.js'
-
 const is_browser = typeof window != "undefined";
 if (!is_browser) throw new Error(`Expected to be running in a browser`);
 
@@ -8,16 +7,28 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .withApplicationArgumentsFromQuery()
     .create();
 
-var select = document.getElementById("select"),
-    arr = ["html", "css", "java", "javascript", "php", "c++", "node.js", "ASP", "JSP", "SQL"];
-for (var i = 0; i < arr.length; i++) {
-    addElementToSelect(arr[i]);
-}
-function addElementToSelect(item) {
+var editor = CodeMirror.fromTextArea(document.getElementById("source"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    mode: "text/x-csharp"
+});
+
+var output = CodeMirror.fromTextArea(document.getElementById("output"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    readOnly: true,
+    mode: "text/x-csharp"
+});
+var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
+CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
+
+var select = document.getElementById("optimizationLevel");
+function addElementToSelect(item, value) {
     var option = document.createElement("OPTION"),
-        txt = document.createTextNode(arr[i]);
+
+        txt = document.createTextNode(item);
     option.appendChild(txt);
-    option.setAttribute("value", arr[i]);
+    option.setAttribute("value", value);
     select.insertBefore(option, select.lastChild);
 }
 
@@ -43,7 +54,6 @@ req.onload = function () {
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
                     console.log("assembly laoded");
                     loader.classList.add("loader-hidden");
-                    document.querySelector('#compile').disabled = false;
                 }
             };
             http.open("GET", "./managed/".concat(jsonResponse.assets[i].name));
@@ -62,24 +72,31 @@ var source = `private static void TestKernel(Index1D index, ArrayView<int> input
 }
 
                 `;
-
-document.getElementById("source").value = source;
-
+editor.getDoc().setValue(source);
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
 async function compile() {
-    source = document.getElementById("source").value;
-    var a = await exports.Program.Compile(source);
-    document.getElementById("output").value = a;
+    source = editor.getValue();
+    
+    var debug = document.getElementById("flexCheckDebug").checked;
+    var assertions = document.getElementById("flexCheckAssertions").checked;
+    var optimizationLvl = document.getElementById("optimizationLevel");
+    exports.Program.Compile(source, debug, assertions, parseInt(optimizationLvl.value));
 }
 
 document.getElementById('compile').addEventListener('click', compile);
 
-runMainAndExit(config.mainAssemblyName, []);
 setModuleImports("main.js", {
     references: (i) => {
         return arraybuffer[i];
     },
-    totalFiles: () => totalFiles
+    totalFiles: () => totalFiles,
+    fillOptimizationLevelDropDown: (ol, value) => {
+        addElementToSelect(ol, value);
+    },
+    setOutput: (out) => {
+        output.getDoc().setValue(out);
+    }
 });
+runMainAndExit(config.mainAssemblyName, []);

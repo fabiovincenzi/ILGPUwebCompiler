@@ -13,5 +13,11 @@ namespace ILGPUwebCompiler
         internal static partial byte[] GetReference(int n);
         [JSImport("totalFiles", "main.js")]
         internal static partial int GetAmmountOfReferences();
+
+        [JSImport("fillOptimizationLevelDropDown", "main.js")]
+        internal static partial void FillOptimizationLevelDropDown(string ol, int value);
+
+        [JSImport("setOutput", "main.js")]
+        internal static partial void SetOutput(string output);
     }
 }

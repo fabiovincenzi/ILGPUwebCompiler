@@ -10,6 +10,11 @@
 		<_WasmPThreadPoolSize>60</_WasmPThreadPoolSize>
 		<WasmEnableThreads>true</WasmEnableThreads>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Content Include="style.css">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.3.1" />
     <PackageReference Include="Microsoft.NET.WebAssembly.Threading" Version="7.0.0-rc.2.22472.3" />
@@ -22,5 +27,12 @@
   <ItemGroup>
     <WasmExtraFilesToDeploy Include="index.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
+	<WasmExtraFilesToDeploy Include="style.css" />
+	<WasmExtraFilesToDeploy Include="codemirror/clike.js" />
+	<WasmExtraFilesToDeploy Include="codemirror/codemirror.js" />
+	<WasmExtraFilesToDeploy Include="codemirror/codemirror.css" />
+	<WasmExtraFilesToDeploy Include="codemirror/matchbrackets.js" />
+	<WasmExtraFilesToDeploy Include="codemirror/show-hint.css" />
+	<WasmExtraFilesToDeploy Include="codemirror/show-hint.js" />
   </ItemGroup>
 </Project>
