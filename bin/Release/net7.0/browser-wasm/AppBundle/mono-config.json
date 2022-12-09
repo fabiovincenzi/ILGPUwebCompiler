@@ -5,6 +5,10 @@
   "assets": [
     {
       "behavior": "assembly",
+      "name": "ILGPU.dll"
+    },
+    {
+      "behavior": "assembly",
       "name": "Microsoft.CodeAnalysis.dll"
     },
     {
@@ -682,10 +686,6 @@
     {
       "behavior": "assembly",
       "name": "System.Private.CoreLib.dll"
-    },
-    {
-      "behavior": "assembly",
-      "name": "ILGPU.dll"
     },
     {
       "behavior": "assembly",

@@ -1,8 +1,10 @@
+C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.wasm
+C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libmono-component-debugger-static.a
+C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\style.css
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPUwebCompiler.deps.json
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPUwebCompiler.runtimeconfig.json
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPUwebCompiler.dll
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPUwebCompiler.pdb
-C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPU.dll
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\Microsoft.CodeAnalysis.dll
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\cs\Microsoft.CodeAnalysis.resources.dll
@@ -204,7 +206,6 @@ C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.js
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.js.symbols
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.timezones.blat
-C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.wasm
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.worker.js
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\icudt.dat
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\icudt_CJK.dat
@@ -215,7 +216,6 @@ C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libicudata.a
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libicui18n.a
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libicuuc.a
-C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libmono-component-debugger-static.a
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libmono-component-debugger-stub-static.a
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libmono-component-diagnostics_tracing-static.a
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\libmono-component-diagnostics_tracing-stub-static.a
@@ -244,6 +244,7 @@ C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.es6.post.js
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\dotnet.es6.pre.js
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\runtime.es6.iffe.js
+C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\ILGPU.dll
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.csproj.AssemblyReference.cache
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.AssemblyInfoInputs.cache
@@ -255,4 +256,3 @@ C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.pdb
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ILGPUwebCompiler.genruntimeconfig.cache
 C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\obj\Release\net7.0\browser-wasm\ref\ILGPUwebCompiler.dll
-C:\Users\Fabio Vincenzi\source\repos\ILGPUwebCompiler\bin\Release\net7.0\browser-wasm\style.css

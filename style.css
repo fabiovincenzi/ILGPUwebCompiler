@@ -1,41 +1,15 @@
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    transition: opacity 0.75s, visibility 0.75s;
+.btn-compile {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 14px;
+    border: 2px solid #47b2e4;
+    font-weight: 600;
+    color: #00458D;
 }
 
-.loader-hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader::after {
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid #dddddd;
-    border-top-color: #7449f5;
-    border-radius: 50%;
-    animation: loading 0.75s ease infinite;
-}
-
-@keyframes loading {
-    form {
-        transform: rotate(0turn);
+    .btn-compile:hover {
+        color: #ffffff;
+        background: #31a9e1;
     }
-
-    to {
-        transform: rotate(1turn);
-    }
-}
-
-.CodeMirror {
-    height: 700px !important;
-}

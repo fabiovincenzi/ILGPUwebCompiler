@@ -12,7 +12,7 @@ namespace ILGPUwebCompiler
     internal class Compiler
     {
         private List<MetadataReference> references { get; set; }
-        public async Task Init()
+        public void Init()
         {
             if (references == null)
             {
@@ -74,7 +74,7 @@ namespace ILGPUwebCompiler
             var writer = new StringWriter();
             Console.SetOut(writer);
             string output = "";
-            await Init();
+            Init();
 
             var currentOut = Console.Out;
 

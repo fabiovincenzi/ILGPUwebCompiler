@@ -21,20 +21,7 @@ public partial class Program
     internal static async Task Compile(string kernel, bool debug, bool assertions, int optimizationLevel)
     {
         var output = await c.CompileAndRun(CodeBuilder.getCode(kernel, debug, assertions, (ILGPU.OptimizationLevel)optimizationLevel));
-
-        //Console.WriteLine("second thread1");
         Service.SetOutput(output);
-        //new Thread(() => SecondThread(CodeBuilder.getCode(kernel, debug, assertions, (ILGPU.OptimizationLevel)optimizationLevel))).Start();
-
-    }
-    static async void SecondThread(string code)
-    {
-        Console.WriteLine("second thread");
-        var output = await c.CompileAndRun(code);
-
-        Console.WriteLine("second thread1");
-        Service.SetOutput(output);
-        Console.WriteLine("second thread2");
     }
     private static void FillOptimizationLevelDropDown()
     {

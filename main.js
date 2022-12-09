@@ -10,15 +10,23 @@ const { setModuleImports, getAssemblyExports, getConfig, runMainAndExit } = awai
     .create();
 
 const gui = new Gui();
+const source = `private static void TestKernel(Index1D index, ArrayView<int> input, ArrayView<int> output)
+{
+    output[index] = input[index];
+}`;
 
-gui.configureEditor();
+var editor = document.querySelectorAll('.CodeMirror')[0].CodeMirror;
+var output = document.querySelectorAll('.CodeMirror')[1].CodeMirror;
+editor.setValue(source);
+editor.refresh();
+
+
 //LOADING OF ASSEMBLIES FOR THE ROSLYN COMPILER
-const loader = document.querySelector(".loader");
 let totalFiles = 0;
 let arraybuffer;
 const req = new XMLHttpRequest();
 req.responseType = 'json';
-req.open('GET', "mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
+req.open('GET', "./mono-config.json", true); //getting the config file that lists all the resources the roslyn compiler needs
 req.onload = function () {
     var jsonResponse = req.response;
     arraybuffer = new Array(totalFiles);
@@ -31,7 +39,8 @@ req.onload = function () {
                 arraybuffer[loadedFiles] = new Uint8Array(http.response);
                 loadedFiles++;
                 if (loadedFiles == totalFiles) { //If i loaded all the files i can enable the compile button
-                    loader.classList.add("loader-hidden");
+                    gui.enableCompileButton();
+
                 }
             };
             http.open("GET", "./managed/".concat(jsonResponse.assets[i].name));
@@ -43,22 +52,16 @@ req.onload = function () {
 };
 req.send(null);
 
-var source = `private static void TestKernel(Index1D index, ArrayView<int> input, ArrayView<int> output)
-{
-    output[index] = input[index];
-}
 
-                `;
-gui.editor.getDoc().setValue(source);
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
 
 async function compile() {
-    source = gui.editor.getValue();
+    const s = editor.getValue();
     var debug = document.getElementById("flexCheckDebug").checked;
     var assertions = document.getElementById("flexCheckAssertions").checked;
     var optimizationLvl = document.getElementById("optimizationLevel");
-    exports.Program.Compile(source, debug, assertions, parseInt(optimizationLvl.value));
+    exports.Program.Compile(s, debug, assertions, parseInt(optimizationLvl.value));
 }
 
 document.getElementById('compile').addEventListener('click', compile);
@@ -72,7 +75,7 @@ setModuleImports("main.js", {
         gui.addElementToSelect(ol, value);
     },
     setOutput: (out) => {
-        gui.output.getDoc().setValue(out);
+        output.getDoc().setValue(out);
     }
 });
 runMainAndExit(config.mainAssemblyName, []);
